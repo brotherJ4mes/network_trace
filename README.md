@@ -2,13 +2,13 @@ This repo serves as an example of how to work with and trace the National Water 
 
 ## definitions, requirements:
 	
-`features` are streams and lakes in the NWM
+`features`  streams and lakes in the NWM
 
 `feature_ids (FIDs)` are the unique identifiers for features
 
-Dependencies: R, rgdal, rgeos (maybe?)
+**Dependencies:** R, rgdal, rgeos (maybe?)
 
-Input files: 
+**Input files:** 
 - `route_link.nc`                      			      can be obtained from NWM DOMAIN files (a.k.a. hydrofabric)
 - shapefile containing flowlines (fl); the actual network     TODO: where did I get this?
 - shapefile containing shoreline data     		      BYOSL (bring your own shoreline; make sure proj matches fl)
@@ -21,5 +21,5 @@ Input files:
 
 2. `terminal.R`
 	- illustrates how to use the output of `preprocess.R`
-	- contains a function to iteratively trace up "from" based on starting
+	- contains a function to iteratively trace up the network from a given stream segment or segments
 

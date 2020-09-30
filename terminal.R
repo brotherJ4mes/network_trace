@@ -4,15 +4,17 @@ library(rgdal)
 load('mi_from.Rdata')
 load('term_seg.Rdata')
 
-lk_file <- '../shp/mihu_shoreline.shp'
-fl_file <- '../shp/mi_fl.shp'
-min_order <- 3
+# user settings 
+lk_file <- '../shp/mihu_shoreline.shp'  # lake shoreline (spatialPolygon)
+fl_file <- '../shp/mi_fl.shp'           # network flowlines (spatialLines)
+min_order <- 3  # the minimum order of streams to consider
 
+# read in files and select flowlines above the minimum order
 fl <- readOGR(fl_file)
 lk <- as(readOGR(lk_file), 'SpatialLinesDataFrame')
 fl_sel <- fl[fl$order_ > min_order,]
 
-
+# plot the entire network
 png('figs/full_network.png',width=800, height=1200)
 plot(fl,ax=T, lwd=fl$order_, col='lightblue')
 plot(lk,add=T,col='black')
@@ -30,9 +32,6 @@ plot(term_seg, lwd=term_seg$order_-min_order+1, col='orange', add=T)
 png('figs/tup1.png',width=800, height=1200)
 plot(fl_sel,ax=T, lwd=fl_sel$order_-min_order+1, col='lightblue')
 plot(lk,add=T,col='black')
-tup1 <- from[c(as.character(term_seg$ID))] # terminal up 1 list
-tup1ids <- as.numeric(unlist(tup1))
-flup1<-fl[match(tup1ids,fl$ID),]
 plot(flup1, lwd=flup1$order_-min_order+1, col='orange', add=T)
 
 png('figs/tup2.png',width=800, height=1200)

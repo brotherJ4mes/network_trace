@@ -1,5 +1,9 @@
 #!/bin/Rscript
-# this script 
+# this script identifies "terminal" stream segments (those entering lake/ocean)
+# and also creates the variable "from" which indicates the upstream IDs for each feature 
+# author: James Kessler (james.kessler@noaa.gov)
+# July 2020
+
 rtlink_file <- 'routelink_mich.nc'
 
 # ======== generate "from" variable =============

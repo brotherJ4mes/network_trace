@@ -9,9 +9,10 @@ This repo serves as an example of how to work with and trace the National Water 
 Dependencies: R, rgdal, rgeos (maybe?)
 
 Input files: 
-	- `route_link.nc`                      			      can be obtained from NWM DOMAIN files (a.k.a. hydrofabric)
-	- shapefile containing flowlines (fl); the actual network     TODO: where did I get this?
-	- shapefile containing shoreline data     		      BYOSL (bring your own shoreline; make sure proj matches fl)
+- `route_link.nc`                      			      can be obtained from NWM DOMAIN files (a.k.a. hydrofabric)
+- shapefile containing flowlines (fl); the actual network     TODO: where did I get this?
+- shapefile containing shoreline data     		      BYOSL (bring your own shoreline; make sure proj matches fl)
+	
 
 ## program sequence
 1. `preprocess.R`

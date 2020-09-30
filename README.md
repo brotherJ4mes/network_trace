@@ -21,5 +21,5 @@ Input files:
 
 2. `terminal.R`
 	- illustrates how to use the output of `preprocess.R`
-	- contains a function to iteratively trace up "from" based on starting
+	- contains a function to iteratively trace up the network from a given stream segment or segments
 

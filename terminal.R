@@ -4,6 +4,7 @@
 # then traces up the stream network from the terminal segments and generates pltos
 # author: James Kessler (james.kessler@noaa.gov)
 # July 2020
+# new comment
 
 library(rgeos)
 library(rgdal)
@@ -18,7 +19,7 @@ fl_file <- '../shp/mi_fl.shp'           # network flowlines (spatialLines)
 min_order <- 3  # the minimum order of streams to plot
 
 
-# read in files and select flowlines above the minimum order
+# read in files and select flowlines above minimum order
 fl <- readOGR(fl_file)
 lk <- as(readOGR(lk_file), 'SpatialLinesDataFrame')
 fl_sel <- fl[fl$order_ > min_order,]
